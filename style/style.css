@@ -72,6 +72,31 @@ html {
     padding: 0 0;
     transition: background-color 0.1s, border 0.1s ease-out;
 }
+#equal {
+    background-color: rgb(180, 92, 21);
+    margin: 10px 0 0 0;
+    border-width: 0px;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 5px 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0;
+    transition: background-color 0.1s, border 0.1s ease-out;
+}
+#equal:active {
+    background: rgba(236, 196, 164, 0.5);
+}
+#equal:hover {
+    border: 5px solid rgb(7, 142, 231);
+}
+#equal:hover::after {
+    background: rgba(236, 196, 164, 0.5);
+}
 .operator {
     background-color: rgb(180, 92, 21);
 }
