@@ -84,7 +84,3 @@ html {
 .btn:hover {
     border: 5px solid rgb(7, 142, 231);
 }
-
-.specialcase {
-    grid-column: 1/3;
-}
