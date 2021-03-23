@@ -100,11 +100,11 @@ const buttonsArr = document.getElementsByClassName("btn");
         });
     } else {
         btn.addEventListener("click", () => {
-            // //Clear button functionality
-            // if (btn.textContent === "C.E") {
-            //     clear(btn.textContent);
-            //     return;
-            // }
+            //Clear button functionality
+            if (btn.textContent === "CLEAR") {
+                clear(btn.textContent);
+                return;
+            }
 
             //Number keys functionality
             if (currentOperator) {
