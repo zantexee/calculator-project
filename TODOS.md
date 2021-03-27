@@ -1,1 +1,1 @@
-# Fix step 6 bugs
+# Add keyboard support
