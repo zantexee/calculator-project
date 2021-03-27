@@ -12,6 +12,7 @@ const multiplyNumbers = (firstNumber, secondNumber) => {
 };
 
 const divideNumbers = (firstNumber, secondNumber) => {
+    if (secondNumber === 0) return "Error.";
     if ((firstNumber / secondNumber).toString().length > 6)
         return (
             Math.round((firstNumber / secondNumber + Number.EPSILON) * 100) /
@@ -33,6 +34,15 @@ const clear = (btnText) => {
     shownResult = false;
     if (btnText) return (display.textContent = "0");
     return (display.textContent = "");
+};
+const remove = () => {
+    let lastCharIndex = display.textContent.length - 1;
+    if (display.textContent.slice(0, lastCharIndex))
+        return (display.textContent = display.textContent.slice(
+            0,
+            lastCharIndex
+        ));
+    return (display.textContent = "0");
 };
 
 const display = document.querySelector(".display");
@@ -103,6 +113,25 @@ const buttonsArr = document.getElementsByClassName("btn");
             //Clear button functionality
             if (btn.textContent === "CLEAR") {
                 clear(btn.textContent);
+                return;
+            }
+            if (btn.textContent.includes("BACKSPACE")) {
+                if (secondNumber) {
+                    secondNumber = secondNumber.slice(
+                        0,
+                        secondNumber.length - 1
+                    );
+                    return remove();
+                }
+                if (firstNumber) {
+                    if (currentOperator) {
+                        currentOperator = null;
+                        return remove();
+                    }
+                    firstNumber = firstNumber.slice(0, firstNumber.length - 1);
+                    return remove();
+                }
+
                 return;
             }
 
