@@ -94,12 +94,6 @@ const buttonsArr = document.getElementsByClassName("btn");
                 firstNumber = result.toString();
                 secondNumber = "";
                 result = null;
-                console.log(
-                    "current values",
-                    result,
-                    firstNumber,
-                    secondNumber
-                );
             }
             if (firstNumber === "" && display.textContent === "0") {
                 firstNumber = "0";
@@ -114,6 +108,12 @@ const buttonsArr = document.getElementsByClassName("btn");
             if (btn.textContent === "CLEAR") {
                 clear(btn.textContent);
                 return;
+            }
+            if (btn.textContent === ".") {
+                if (!display.textContent.includes("."))
+                    return (display.textContent = display.textContent.concat(
+                        "."
+                    ));
             }
             if (btn.textContent.includes("BACKSPACE")) {
                 if (secondNumber) {
