@@ -45,7 +45,7 @@ const remove = () => {
     return (display.textContent = "0");
 };
 
-const display = document.querySelector(".display");
+const display = document.getElementById("display");
 
 let firstNumber = "",
     secondNumber = "",
@@ -73,12 +73,6 @@ const buttonsArr = document.getElementsByClassName("btn");
                 result = null;
                 display.textContent = firstNumber;
                 shownResult = true;
-                console.log(
-                    "current values",
-                    result,
-                    firstNumber,
-                    secondNumber
-                );
             });
         }
         //Operator buttons functionality
@@ -100,7 +94,7 @@ const buttonsArr = document.getElementsByClassName("btn");
             }
 
             display.textContent = display.textContent.concat(btn.textContent);
-            currentOperator = btn.textContent;
+            return (currentOperator = btn.textContent);
         });
     } else {
         btn.addEventListener("click", () => {
@@ -136,6 +130,7 @@ const buttonsArr = document.getElementsByClassName("btn");
             }
 
             //Number keys functionality
+
             if (currentOperator) {
                 display.textContent = display.textContent.concat(
                     btn.textContent
