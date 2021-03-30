@@ -77,6 +77,8 @@ const buttonsArr = document.getElementsByClassName("btn");
         }
         //Operator buttons functionality
         btn.addEventListener("click", () => {
+            if (firstNumber.length > 8 && !secondNumber)
+                display.textContent = "";
             if (currentOperator) {
                 if (!secondNumber) return;
 
@@ -132,11 +134,15 @@ const buttonsArr = document.getElementsByClassName("btn");
             //Number keys functionality
 
             if (currentOperator) {
+                if (firstNumber.length > 8 && !secondNumber)
+                    display.textContent = "";
+                if (secondNumber.length >= 11) return;
                 display.textContent = display.textContent.concat(
                     btn.textContent
                 );
                 return (secondNumber = secondNumber.concat(btn.textContent));
             } else {
+                if (firstNumber.length >= 11) return;
                 if (firstNumber === "") display.textContent = "";
                 if (shownResult) clear();
                 display.textContent = display.textContent.concat(
